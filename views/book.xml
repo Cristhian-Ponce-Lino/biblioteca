@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+
+        <!-- Vista libros en forma de lista -->
+
+        <record model="ir.ui.view" id="biblioteca.list_books">
+            <field name="name">lends books list</field>
+            <field name="model">biblioteca.book</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="name"/>
+
+                    <field name="author"/>
+
+                    <field name="publisher"/>
+
+                    <field name="publish_date"/>
+
+                    <field name="language"/>
+
+                    <field name="state"/>
+
+                    <field name="lend_book_id" invisible="1"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de libros en forma de formulario dentro de un sheet -->
+
+        <record model="ir.ui.view" id="biblioteca.list_book">
+            <field name="name">Books List</field>
+            <field name="model">biblioteca.book</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+
+                        <group>
+                            <field name="author"
+                                   decoration-bf="'author'"/>
+                        </group>
+
+                        <group>
+                            <field name="publisher"
+                                   decoration-success="'publisher'"/>
+                        </group>
+
+                        <group>
+                            <field name="publish_date"
+                                   decoration-success="'publish_date'"/>
+                        </group>
+
+                        <group>
+                            <field name="language"
+                                   decoration-success="'language'"/>
+                        </group>
+
+                        <group>
+                            <field name="state"
+                                   decoration-danger="'state'"/>
+                        </group>
+
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <!-- Vista search -->
+        <record model="ir.ui.view" id="biblioteca.list_books_search">
+            <field name="name">Books Search List</field>
+            <field name="model">biblioteca.book</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="author"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Abrir las vistas en los modelos -->
+
+        <record model="ir.actions.act_window" id="biblioteca.action_window_books">
+            <field name="name">Listado de Libros</field>
+            <field name="res_model">biblioteca.book</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
+</odoo>

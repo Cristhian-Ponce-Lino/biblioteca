@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="biblioteca_profile_report_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.basic_layout">
+                        <div class="page">
+                            <div class="row" id="hash_header">
+                                <div class="col-12">
+
+                                    <h2>Reporte de préstamo de libros</h2>
+
+                                    <br>
+                                        <strong>Registro del
+                                            <span t-field="doc.loan_day"/>
+                                            al
+                                            <span t-field="doc.return_day"/>
+                                        </strong>
+                                    </br>
+
+                                    <table class="table">
+
+                                        <thead>
+
+                                            <tr>
+                                                <th scope="col">Usuario</th>
+                                                <th scope="col">Nombre(s) de Libro</th>
+                                                <th scope="col">Fecha de préstamo</th>
+                                                <th scope="col">Fecha de devolución</th>
+                                            </tr>
+
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="doc.lend_book_ids" t-as="l">
+                                                <t>
+                                                    <tr valign="top">
+                                                        <td>
+                                                            <br>
+                                                                <span t-field="l.partner_id"/>
+                                                            </br>
+                                                        </td>
+                                                        <td>
+                                                            <t t-foreach="l.borrowed" t-as="s">
+                                                                <br>
+                                                                    <span t-field="s.name"/>
+                                                                </br>
+                                                            </t>
+
+                                                        </td>
+                                                        <td>
+                                                            <br>
+                                                                <span t-field="l.loan_day"/>
+                                                            </br>
+                                                        </td>
+                                                        <td>
+                                                            <br>
+                                                                <span t-field="l.return_day"/>
+                                                            </br>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </t>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

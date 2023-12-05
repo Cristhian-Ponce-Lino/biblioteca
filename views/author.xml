@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+
+        <!-- Vista autores en forma de lista -->
+
+        <record model="ir.ui.view" id="biblioteca.list_authors">
+            <field name="name">aut_list</field>
+            <field name="model">biblioteca.author</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"
+                           decoration-bf="'name'"/>
+                    <field name="birthday"/>
+                    <field name="nationality"/>
+                    <field name="sex"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista autores en forma de formulario -->
+
+        <record model="ir.ui.view" id="biblioteca.form_authors">
+            <field name="name">aut_form</field>
+            <field name="model">biblioteca.author</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="birthday"/>
+                            <field name="nationality"/>
+                            <field name="sex"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Vista search -->
+        <record model="ir.ui.view" id="biblioteca.list_authors_search">
+            <field name="name">Authors Search List</field>
+            <field name="model">biblioteca.author</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="nationality"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Abrir las vistas en los modelos -->
+
+        <record model="ir.actions.act_window" id="biblioteca.action_window_autor">
+            <field name="name">Listado de Autores</field>
+            <field name="res_model">biblioteca.author</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+    </data>
+</odoo>

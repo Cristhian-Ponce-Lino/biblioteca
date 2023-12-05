@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+
+        <!-- Vista de reporte de biblioteca -->
+
+        <record id="reporte_wizard" model="ir.ui.view">
+            <field name="name">biblioteca.report.wizard.form</field>
+            <field name="model">biblioteca.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Reporte Wizard">
+                    <group>
+
+                        <group>
+                            <field name="loan_day"/>
+                        </group>
+
+                        <group>
+                            <field name="return_day"/>
+                        </group>
+
+                        <field name="lend_book_ids"/>
+
+                    </group>
+                    <footer>
+                        <button string="Generar PDF" type="object" class="oe_highlight" name="action_report_pdf"/>
+                        <button string="Generar Excel" type="object" class="oe_highlight" name="action_report_excel"/>
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Intefaz de usuario -->
+
+        <record id="action_biblioteca_report_wizard" model="ir.actions.act_window">
+            <field name="name">Reporte de Libro</field>
+            <field name="res_model">biblioteca.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Reporte PDF-->
+
+        <record id="report_pdf_wizard" model="ir.actions.report">
+            <field name="name">Reporte PDF</field>
+            <field name="model">biblioteca.report.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">biblioteca.biblioteca_profile_report_template</field>
+            <field name="report_file">biblioteca.biblioteca_profile_report_template</field>
+        </record>
+
+        <!-- Reporte PDF-->
+
+        <record id="report_xlsx_book" model="ir.actions.report">
+            <field name="name">Libros</field>
+            <field name="model">biblioteca.report.wizard</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">biblioteca.report_xlsx_ex</field>
+            <field name="report_file">biblioteca.report_xlsx_ex</field>
+            <field name="binding_model_id" ref="model_biblioteca_report_wizard"/>
+        </record>
+
+    </data>
+</odoo>

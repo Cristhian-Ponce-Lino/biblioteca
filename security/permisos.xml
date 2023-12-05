@@ -1,0 +1,24 @@
+<odoo>
+
+    <data>
+
+        <record id="biblioteca_module_management" model="ir.module.category">
+            <field name="name">Biblioteca</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="user_access" model="res.groups">
+            <field name="name">Usuarios</field>
+            <field name="category_id" ref="biblioteca_module_management"/>
+        </record>
+
+        <record id="admin_access" model="res.groups">
+            <field name="name">Administrador</field>
+            <field name="category_id" ref="biblioteca_module_management"/>
+            <field name="implied_ids" eval="[(4, ref('user_access'))]"/>
+
+        </record>
+
+    </data>
+
+</odoo>

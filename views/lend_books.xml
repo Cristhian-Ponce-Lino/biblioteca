@@ -1,0 +1,79 @@
+<odoo>
+    <data>
+
+        <!-- Vista libros en forma de lista -->
+
+        <record model="ir.ui.view" id="biblioteca.list_lendbooks">
+            <field name="name">Listado de prestamo</field>
+            <field name="model">biblioteca.lend.books</field>
+            <field name="arch" type="xml">
+
+                <tree>
+
+                    <field name="id" invisible="1"/>
+
+                    <field name="partner_id"
+                           decoration-bf="'partner_id'"/>
+
+                    <field name="borrowed"
+                           decoration-success="'borrowed'"/>
+
+                    <field name="loan_day"
+                           decoration-success="'loan_day'"/>
+
+                    <field name="return_day"
+                           decoration-danger="'return_day'"/>
+
+                    <field name="return_day"
+                           widget="remaining_days"
+                           decoration-danger="'return_day'"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista libros prestados en forma de formulario -->
+
+        <record model="ir.ui.view" id="biblioteca.form_lendbooks">
+            <field name="name">lend form</field>
+            <field name="model">biblioteca.lend.books</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="id" invisible="1"/>
+                            <field name="partner_id"/>
+                            <field name="borrowed"
+                                   widget="many2many"/>
+                            <field name="loan_day"/>
+                            <field name="return_day"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista search -->
+        <record model="ir.ui.view" id="biblioteca.list_lendsbooks_search">
+            <field name="name">Lends Books Search List</field>
+            <field name="model">biblioteca.lend.books</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="partner_id"/>
+                    <field name="borrowed"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Abrir las vistas en los modelos -->
+
+        <record model="ir.actions.act_window" id="biblioteca.action_window_lends">
+            <field name="name">Listado de Libros Prestados</field>
+            <field name="res_model">biblioteca.lend.books</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+
+    </data>
+</odoo>
