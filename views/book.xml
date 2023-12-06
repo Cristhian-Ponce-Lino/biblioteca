@@ -46,23 +46,19 @@
                         </group>
 
                         <group>
-                            <field name="publisher"
-                                   decoration-success="'publisher'"/>
+                            <field name="publisher"/>
                         </group>
 
                         <group>
-                            <field name="publish_date"
-                                   decoration-success="'publish_date'"/>
+                            <field name="publish_date"/>
                         </group>
 
                         <group>
-                            <field name="language"
-                                   decoration-success="'language'"/>
+                            <field name="language"/>
                         </group>
 
                         <group>
-                            <field name="state"
-                                   decoration-danger="'state'"/>
+                            <field name="state"/>
                         </group>
 
                     </sheet>
@@ -76,10 +72,29 @@
             <field name="name">Books Search List</field>
             <field name="model">biblioteca.book</field>
             <field name="arch" type="xml">
+
                 <search>
-                    <field name="name"/>
-                    <field name="author"/>
+
+                    <group string="Agrupar por">
+                        <filter string="Nombres" name="name"
+                                context="{'group_by': 'name'}"/>
+                        <filter string="Editorial" name="publisher"
+                                context="{'group_by': 'publisher'}"/>
+                        <filter string="Idioma" name="language"
+                                context="{'group_by': 'language'}"/>
+                        <filter string="Año de publicación" name="publish_date"
+                                context="{'group_by': 'publish_date'}"/>
+                        <filter string="Estado" name="state"
+                                context="{'group_by': 'state'}"/>
+                    </group>
+
+                    <field name="name" string="Usuario"/>
+                    <field name="publisher" string="Editorial"/>
+                    <field name="language" string="Idioma"/>
+                    <field name="state" string="Estado"/>
+
                 </search>
+
             </field>
         </record>
 

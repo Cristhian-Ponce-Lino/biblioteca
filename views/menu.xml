@@ -5,15 +5,15 @@
         <!-- Menú principal -->
         <menuitem name="Biblioteca" id="biblioteca.menu_biblioteca"/>
 
-        <!-- actions Autores-->
-
-        <menuitem name="Autores" id="biblioteca.menu_author" parent="biblioteca.menu_biblioteca"
-                  action="biblioteca.action_window_autor"/>
-
         <!-- actions libros -->
 
         <menuitem name="Libros" id="biblioteca.menu_libros" parent="biblioteca.menu_biblioteca"
-                  action="biblioteca.action_window_books"/>
+                  action="biblioteca.action_window_books" sequence='1'/>
+
+        <!-- actions Autores-->
+
+        <menuitem name="Autores" id="biblioteca.menu_author" parent="biblioteca.menu_biblioteca"
+                  action="biblioteca.action_window_autor" sequence='2'/>
 
 
         <!-- actions prestamos -->

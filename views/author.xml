@@ -44,8 +44,21 @@
             <field name="model">biblioteca.author</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name"/>
-                    <field name="nationality"/>
+
+                    <group string="Agrupar por">
+                        <filter string="Nombres" name="name"
+                                context="{'group_by': 'name'}"/>
+                        <filter string="Nacionalidad" name="nationality"
+                                context="{'group_by': 'nationality'}"/>
+                        <filter string="Género" name="sex"
+                                context="{'group_by': 'sex'}"/>
+
+                    </group>
+
+                    <field name="name" string="Usuario"/>
+                    <field name="nationality" string="Nacionalidad"/>
+                    <field name="sex" string="Sexo"/>
+
                 </search>
             </field>
         </record>

@@ -60,8 +60,22 @@
             <field name="model">biblioteca.lend.books</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="partner_id"/>
-                    <field name="borrowed"/>
+
+                    <group string="Agrupar por">
+                        <filter string="Nombres" name="partner_id"
+                                context="{'group_by': 'partner_id'}"/>
+                        <filter string="Fecha de préstamo" name="loan_day"
+                                context="{'group_by': 'loan_day'}"/>
+                        <filter string="Fecha de devolución" name="return_day"
+                                context="{'group_by': 'return_day'}"/>
+                    </group>
+
+
+                    <field name="partner_id" string="Usuario"/>
+                    <field name="borrowed" string="Prestamos"/>
+                    <field name="loan_day" string="Fecha prestamos"/>
+                    <field name="return_day" string="Fecha devolución"/>
+
                 </search>
             </field>
         </record>

@@ -3,7 +3,7 @@
     'name': "Biblioteca",
 
     'summary': """
-        Este es un modulo de prestamos de libros para las personas que son amante de la literatura
+        Préstamos de libros para las personas que son amante de la literatura
         """,
 
     'description': """
@@ -25,10 +25,10 @@
         'views/author.xml',
         'views/book.xml',
         'views/lend_books.xml',
-        'views/menu.xml',
         'wizard/biblioteca_report_wizard.xml',
         'wizard/biblioteca_report_template.xml',
         'report/report_xlsx.xml',
+        'views/menu.xml',
 
     ],
     # only loaded in demonstration mode
