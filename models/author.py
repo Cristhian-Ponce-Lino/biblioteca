@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Authors(models.Model):
@@ -8,5 +8,11 @@ class Authors(models.Model):
     name = fields.Char('Nombres: ', required=True)
     birthday = fields.Date('Fecha de nacimiento: ')
     nationality = fields.Char('Nacionalidad: ')
-    sex = fields.Selection([('masculino', 'Masculino'),
-        ('femenino', 'Femenino')], 'Género: ', default='masculino')
+    sex = fields.Selection(
+        [
+            ('masculino', 'Masculino'),
+            ('femenino', 'Femenino')
+        ],
+        'Género: ',
+        default='masculino'
+    )
