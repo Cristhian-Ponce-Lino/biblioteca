@@ -1,10 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_biblioteca_author,biblioteca.author,model_biblioteca_author,,1,1,1,1
-#access_biblioteca_author,biblioteca.author,model_biblioteca_author,user_access,1,0,0,0
-access_biblioteca_lend_books,biblioteca.lend_books,model_biblioteca_lend_books,,1,1,1,1
-#access_biblioteca_lend_books,biblioteca.lend_books,model_biblioteca_lend_books,user_access,1,0,0,0
-access_biblioteca_book,biblioteca.book,model_biblioteca_book,,1,1,1,1
-#access_biblioteca_book,biblioteca.book,model_biblioteca_book,user_access,1,0,0,0
+access_biblioteca_author,biblioteca.author,model_biblioteca_author,admin_access,1,1,1,1
+access_biblioteca_lend_books,biblioteca.lend_books,model_biblioteca_lend_books,admin_access,1,1,1,1
+access_biblioteca_book,biblioteca.book,model_biblioteca_book,admin_access,1,1,1,1
+access_biblioteca_report_wizard,biblioteca.report_wizard,model_biblioteca_report_wizard,admin_access,1,1,1,1
 
-access_biblioteca_report_wizard,biblioteca.report_wizard,model_biblioteca_report_wizard,,1,1,1,1
-#access_biblioteca_report_wizard_user,biblioteca.report_wizard,model_biblioteca_report_wizard,user_access,1,0,0,0
+
+
+access_biblioteca_author_user,biblioteca.author,model_biblioteca_author,user_access,1,0,0,0
+access_biblioteca_lend_books_user,biblioteca.lend_books,model_biblioteca_lend_books,user_access,1,0,0,0
+access_biblioteca_book_user,biblioteca.book,model_biblioteca_book,user_access,1,0,0,0
+access_biblioteca_report_wizard_user,biblioteca.report_wizard,model_biblioteca_report_wizard,user_access,1,0,0,0

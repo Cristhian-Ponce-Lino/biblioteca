@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Book(models.Model):
@@ -9,10 +9,25 @@ class Book(models.Model):
     publisher = fields.Char('Editorial: ')
     publish_date = fields.Integer('Año de publicación: ')
     pages_count = fields.Integer('Número de páginas: ')
-    state = fields.Selection([('available', 'Disponible'), ('borrowed', 'Prestado')], 'Estado: ', default='available')
-    language = fields.Selection([('español', 'Español'), ('ingles', 'Ingles')], 'Idioma: ', default='español')
+    state = fields.Selection(
+        [
+            ('available', 'Disponible'),
+            ('borrowed', 'Prestado')
+        ],
+        'Estado: ',
+        default='available'
+    )
+    language = fields.Selection(
+        [
+            ('español', 'Español'),
+            ('ingles', 'Ingles')
+        ],
+        'Idioma: ',
+        default='español'
+    )
     description = fields.Text('Descripción: ')
 
     lend_book_id = fields.Many2one(
         comodel_name='biblioteca.lend.books',
-        string='Prestado a: ')
+        string='Prestado a: '
+    )

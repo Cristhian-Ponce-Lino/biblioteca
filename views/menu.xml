@@ -3,27 +3,26 @@
     <data>
 
         <!-- Menú principal -->
-        <menuitem name="Biblioteca" id="biblioteca.menu_biblioteca"/>
+        <menuitem name="Biblioteca" id="menu_biblioteca" web_icon="biblioteca,static/description/icon.png"/>
 
         <!-- actions libros -->
 
-        <menuitem name="Libros" id="biblioteca.menu_libros" parent="biblioteca.menu_biblioteca"
-                  action="biblioteca.action_window_books" sequence='1'/>
+        <menuitem name="Libros" id="menu_libros" parent="menu_biblioteca" sequence="1"
+                  action="action_window_books"/>
 
         <!-- actions Autores-->
 
-        <menuitem name="Autores" id="biblioteca.menu_author" parent="biblioteca.menu_biblioteca"
-                  action="biblioteca.action_window_autor" sequence='2'/>
-
+        <menuitem name="Autores" id="menu_author" parent="menu_biblioteca" sequence="2"
+                  action="action_window_autor"/>
 
         <!-- actions prestamos -->
 
-        <menuitem name="Prestamo" id="biblioteca.menu_lends" parent="biblioteca.menu_biblioteca"
+        <menuitem name="Prestamo" id="menu_lends" parent="menu_biblioteca"
                   action="biblioteca.action_window_lends"/>
 
         <!-- actions menu report -->
 
-        <menuitem name="Reportes" id="biblioteca.menu_reports" parent="biblioteca.menu_biblioteca"
-                  action="biblioteca.action_biblioteca_report_wizard"/>
+        <menuitem name="Reportes" id="menu_reports" parent="menu_biblioteca"
+                  action="action_biblioteca_report_wizard"/>
     </data>
 </odoo>

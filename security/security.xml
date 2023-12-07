@@ -1,7 +1,5 @@
 <odoo>
-
     <data>
-
         <record id="biblioteca_module_management" model="ir.module.category">
             <field name="name">Biblioteca</field>
             <field name="sequence">10</field>
@@ -18,7 +16,5 @@
             <field name="implied_ids" eval="[(4, ref('user_access'))]"/>
 
         </record>
-
     </data>
-
 </odoo>
